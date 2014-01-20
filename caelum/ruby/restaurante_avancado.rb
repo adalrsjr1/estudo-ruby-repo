@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # declaracao do metodo
 def qualifica(nota)
 	puts "A nota do restaurante foi #{nota}"

@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 nomes = []
 
 nomes[0] = "Fazano"
@@ -20,8 +21,14 @@ class Franquia
 	end
 
 	def mostra
-		for restaurante in @restaurantes
-			puts restaurante.nome
+		@restaurantes.each do |r|
+			puts r.nome
+		end
+	end
+
+	def relatorio
+		@restaurantes.each do |r|
+			yield r
 		end
 	end
 end
@@ -46,3 +53,7 @@ franquia.add rest1, rest2
 franquia.mostra
 
 rest1.fechar_conta :valor => 50, :nota => 9, :comentario => 'Gostei!'
+
+franquia.relatorio do |r|
+	puts "Restaurante cadastrado: #{r.nome}"
+end
