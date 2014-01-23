@@ -67,3 +67,4 @@ end
 rest1 = Restaurante.new("Fazano")
 rest1.nota = 10
 rest1.qualifica
+
